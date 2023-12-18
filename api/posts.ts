@@ -1,8 +1,8 @@
 import { IComment, IPost } from "@/interfaces/posts"
 import api from "."
 
-export const getPosts = () => {
-    const response = api<IPost[]>('posts')
+export const getPosts = (page?: number) => {
+    const response = api<IPost[]>(`posts?page=${page}`)
     return response
 } 
 
